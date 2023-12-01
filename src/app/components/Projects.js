@@ -12,7 +12,9 @@ const Projects = () => {
             }}
             className="bg-contain bg-center w-full h-full rounded-lg"
           ></div>
-          <p className="text-white text-sm text-center -mt-3 shadow">Gallery DND</p>
+          <p className="text-white text-sm text-center -mt-3 shadow">
+            Gallery DND
+          </p>
         </div>
       </a>
       {/* public/assets/energyrenewableworld.png */}
@@ -27,6 +29,22 @@ const Projects = () => {
           ></div>
           <p className="text-white text-sm text-center -mt-3 shadow">
             EnergyRenewableWorld
+          </p>
+        </div>
+      </a>
+
+      {/* public/assets/helpmeoutext.png */}
+      <a href="https://helpmeout-navy.vercel.app" target="_blank">
+        <div className="w-[150px] md:w-[160px] lg:w-[200px] lg:h-40 h-32 flex-shrink-0 rounded-lg hover:scale-110 transition ease-in-out delay-150 duration-300">
+          <div
+            style={{
+              backgroundImage: "url('/assets/helpmeoutext.png')",
+              backgroundRepeat: "no-repeat",
+            }}
+            className="bg-contain bg-center w-full h-full rounded-lg"
+          ></div>
+          <p className="text-white text-sm text-center -mt-3 shadow">
+            HelpMeOut Extension
           </p>
         </div>
       </a>
@@ -93,6 +111,10 @@ const Projects = () => {
           </p>
         </div>
       </a>
+
+      <button className="w-[100px] h-[42px] bg-[#100742] rounded-[1rem] text-white text-[.7rem] font-[500] flex-shrink-0 tracking-[0.11rem] text-center padding-[0.4rem] shadow-[#1F1554] shadow-inner hover:scale-110 transition ease-in-out duration-300">
+        more...
+      </button>
     </div>
   );
 };
