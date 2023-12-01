@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary-2: #030015;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  background-color: var(--primary-2);
+  padding: 16px;
+  font-family: "Alegreya Sans SC", "Alegreya Sans", sans-serif;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 72px;
+  }
+}
+
+@media (min-width: 1048px) {
+  body {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  height: 2px;
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+}
