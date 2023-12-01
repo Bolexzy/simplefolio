@@ -25,7 +25,7 @@ export default function Home() {
             {/* <img src="/assets/profile.png" className="w-full" /> */}
             <div
               style={{
-                backgroundImage: "url('/assets/profile.png')",
+                backgroundImage: "url('/assets/boluwatife.png')",
                 backgroundRepeat: "no-repeat",
               }}
               className="bg-cover bg-center w-full h-full rounded-full bg-[#3E3D45]"
