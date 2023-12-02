@@ -75,7 +75,10 @@ export default function Home() {
             </div>
 
             {/* section body  */}
-            <p className="text-[12px] md:text-[13px] tracking-widest font-[400] text-white">
+            <p
+              className="text-[12px] md:text-[13px] tracking-widest font-[400] text-[#c7c7c7] leading-6"
+              style={{ fontFamily: "Alegreya Sans" }}
+            >
               Hi, I'm Boluwatife Emmanuel, a passionate and experienced web
               developer specializing in building high-quality web and mobile
               applications. With a strong background in various programming
@@ -86,7 +89,10 @@ export default function Home() {
               software development principles and best practices.{" "}
             </p>
 
-            <p className="text-[12px] md:text-[13px] tracking-widest font-[400] text-white">
+            <p
+              className="text-[12px] md:text-[13px] tracking-widest font-[400] text-[#c7c7c7] leading-6"
+              style={{ fontFamily: "Alegreya Sans" }}
+            >
               I am a fervent advocate for staying abreast of the latest security
               measures and best practices, constantly seeking out new knowledge
               to expand my skillset. Beyond the realm of code, I am an avid
