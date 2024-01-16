@@ -1,4 +1,5 @@
 // import { Inter } from "next/font/google";
+import Script from "next/script";
 import Footer from "./components/Footer";
 import "./globals.css";
 
@@ -11,9 +12,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       {/* <body className={inter.className}>{children}</body> */}
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script id="themeswitcher" strategy="beforeInteractive">
+          {`
+
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
+            `}
+        </Script>
+      </body>
       <Footer />
     </html>
   );

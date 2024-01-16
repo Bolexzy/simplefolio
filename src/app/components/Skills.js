@@ -1,32 +1,61 @@
+import Image from "next/image";
 import React from "react";
 
 const Skills = () => {
   const skills = [
-    { skill: "HTML", rate: "95%" },
-    { skill: "CSS", rate: "95%" },
-    { skill: "JS", rate: "80%" },
-    { skill: "WORDPRESS", rate: "75%" },
-    { skill: "TAILWIND", rate: "80%" },
-    { skill: "REACT/JS", rate: "80%" },
-    { skill: "NEXT/JS", rate: "90%" },
+    { name: "React/js", image: "/assets/react.svg" },
+
+    { name: "Tailwind CSS", image: "/assets/ts.svg" },
+    { name: "Javascript", image: "/assets/js.svg" },
+    // NodeJS
+    { name: "NodeJS", image: "/assets/node.svg" },
+    // MongoDB
+    { name: "MongoDB", image: "/assets/mongodb.svg" },
+    // ExpressJS
+    { name: "ExpressJS", image: "/assets/express.svg" },
+    // HTML
+    { name: "HTML", image: "/assets/html.svg" },
+    // CSS
+    { name: "CSS", image: "/assets/css.svg" },
+    // Tailwind CSS
+    { name: "Tailwind CSS", image: "/assets/tailwind.svg" },
+    // mySql
+    { name: "mySql", image: "/assets/mysql.svg" },
+    // Firebase
+    { name: "Firebase", image: "/assets/firebase.svg" },
+    // MUI
+    { name: "MUI", image: "/assets/mui.svg" },
+    // Figma
+    { name: "Figma", image: "/assets/figma.svg" },
+    // Bootstrap
+    { name: "Bootstrap", image: "/assets/bootstrap.svg" },
   ];
 
   const skillElement = skills.map((skill, index) => (
-    <li
+    <div
+      className="flex flex-col items-center justify-center gap-2 group p-2"
       key={index}
-      className="w-[95px] flex text-center text-white bg-[#616063] rounded-2xl h-[25px] dark:bg-[#616063] relative border border-slate-50 hover:border-2 hover:border-white hover:scale-110 transition ease-in-out delay-150 duration-300 "
     >
-      <div
-        class="bg-[#322A61] h-full rounded-2xl dark:bg-gray-900"
-        style={{ width: `${skill.rate}` }}
-      ></div>
-      <p className="absolute left-0 right-0 top-0 bottom-0 text-[12px] md:text-[13px] text-[#C7C7C7]">
-        {skill.skill}
-      </p>
-    </li>
+      <div className="w-[30px] lg:w-[40px] hover:scale-110 transition-all ease-in-out duration-300">
+        <Image
+          src={`${skill.image}`}
+          alt="skill logo"
+          className="w-full"
+          width={100}
+          height={100}
+        />
+      </div>
+      <div className="text-black/50 dark:text-white/75 text-sm rounded-full  font-bold capitalize text-center">
+        {skill.name}
+      </div>
+    </div>
   ));
 
-  return <ul className="flex flex-wrap gap-4">{skillElement}</ul>;
+  return (
+    <div className="w-full flex  flex-row flex-wrap items-center justify-center gap-y-2 gap-x-2">
+      {skillElement}
+    </div>
+  );
 };
 
 export default Skills;

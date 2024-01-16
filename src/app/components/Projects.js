@@ -1,118 +1,50 @@
+import Image from "next/image";
 import React from "react";
+import projects from "./data";
 
 const Projects = () => {
   return (
-    <div className="flex gap-4 items-center my-auto">
-      <a href="https://gallery-hngx.vercel.app/" target="_blank">
-        <div className="w-[150px] md:w-[160px] lg:w-[200px] lg:h-40 h-32 flex-shrink-0 rounded-lg hover:scale-110 transition ease-in-out delay-150 duration-300">
+    <div className="flex gap-5 items-center my-auto">
+      {projects.map((project, index) => (
+        <div className="flex flex-col w-full rounded-lg  " key={index}>
           <div
             style={{
-              backgroundImage: "url('/assets/gallery-hngx.png')",
+              backgroundImage: `url(${project.image})`,
               backgroundRepeat: "no-repeat",
             }}
-            className="bg-contain bg-center w-full h-full rounded-lg"
-          ></div>
-          <p className="text-white text-sm text-center -mt-3 shadow">
-            Gallery DND
+            className="bg-contain w-[200px] md:w-[250px] md:h-[190px] lg:w-[300px] lg:h-[200px] 2xl:w-[350px] 2xl:h-[250px]   h-32  bg-center rounded-lg group relative hover:scale-110 transition ease-in-out delay-150 duration-300"
+            // className="w-full"
+          >
+            {/* <Image
+              width={100}
+              height={100}
+              className="w-full"
+              src={"/assets/gallery-hngx.png"}
+            /> */}
+            <div className="absolute w-full h-full items-center justify-center bg-blend-lighten bg-white/25 dark:bg-dark/50 hidden group-hover:flex text-dark dark:text-white">
+              <a href={project.liveLink} target="_blank">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6 lg:w-8  lg:h-8"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M15.75 2.25H21a.75.75 0 0 1 .75.75v5.25a.75.75 0 0 1-1.5 0V4.81L8.03 17.03a.75.75 0 0 1-1.06-1.06L19.19 3.75h-3.44a.75.75 0 0 1 0-1.5Zm-10.5 4.5a1.5 1.5 0 0 0-1.5 1.5v10.5a1.5 1.5 0 0 0 1.5 1.5h10.5a1.5 1.5 0 0 0 1.5-1.5V10.5a.75.75 0 0 1 1.5 0v8.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V8.25a3 3 0 0 1 3-3h8.25a.75.75 0 0 1 0 1.5H5.25Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <p className="text-dark dark:text-white text-sm md:text-base  text-center">
+            {project.title}
           </p>
         </div>
-      </a>
-      {/* public/assets/energyrenewableworld.png */}
-      <a href="https://energyrenewableworld.home.blog/" target="_blank">
-        <div className="w-[150px] md:w-[160px] lg:w-[200px] lg:h-40 h-32 flex-shrink-0 rounded-lg hover:scale-110 transition ease-in-out delay-150 duration-300">
-          <div
-            style={{
-              backgroundImage: "url('/assets/energyrenewableworld.png')",
-              backgroundRepeat: "no-repeat",
-            }}
-            className="bg-contain bg-center w-full h-full rounded-lg"
-          ></div>
-          <p className="text-white text-sm text-center -mt-3 shadow">
-            EnergyRenewableWorld
-          </p>
-        </div>
-      </a>
+      ))}
 
-      {/* public/assets/helpmeoutext.png */}
-      <a href="https://helpmeout-navy.vercel.app" target="_blank">
-        <div className="w-[150px] md:w-[160px] lg:w-[200px] lg:h-40 h-32 flex-shrink-0 rounded-lg hover:scale-110 transition ease-in-out delay-150 duration-300">
-          <div
-            style={{
-              backgroundImage: "url('/assets/helpmeoutext.png')",
-              backgroundRepeat: "no-repeat",
-            }}
-            className="bg-contain bg-center w-full h-full rounded-lg"
-          ></div>
-          <p className="text-white text-sm text-center -mt-3 shadow">
-            HelpMeOut Extension
-          </p>
-        </div>
-      </a>
-
-      {/* public/assets/travel-jounal.png */}
-      <a href="https://imaginative-dango-63fa75.netlify.app/" target="_blank">
-        <div className="w-[150px] md:w-[160px] lg:w-[200px] lg:h-40 h-32 flex-shrink-0 rounded-lg hover:scale-110 transition ease-in-out delay-150 duration-300">
-          <div
-            style={{
-              backgroundImage: "url('/assets/travel-jounal.png')",
-              backgroundRepeat: "no-repeat",
-            }}
-            className="bg-contain bg-center w-full h-full rounded-lg"
-          ></div>
-          <p className="text-white text-sm text-center -mt-3 shadow">
-            Travel Diary
-          </p>
-        </div>
-      </a>
-      {/* public/assets/movie-box.png */}
-      <a href="https://movie-box-hngx.vercel.app/" target="_blank">
-        <div className="w-[150px] md:w-[160px] lg:w-[200px] lg:h-40 h-32 flex-shrink-0 rounded-lg hover:scale-110 transition ease-in-out delay-150 duration-300">
-          <div
-            style={{
-              backgroundImage: "url('/assets/movie-box.png')",
-              backgroundRepeat: "no-repeat",
-            }}
-            className="bg-contain bg-center w-full h-full rounded-lg"
-          ></div>
-          <p className="text-white text-sm text-center -mt-3 shadow">
-            Movie Box
-          </p>
-        </div>
-      </a>
-
-      {/* public/assets/quizwhiz.png */}
-      <a href="https://quizwhiz-72df8.web.app/" target="_blank">
-        <div className="w-[150px] md:w-[160px] lg:w-[200px] lg:h-40 h-32 flex-shrink-0 rounded-lg hover:scale-110 transition ease-in-out delay-150 duration-300">
-          <div
-            style={{
-              backgroundImage: "url('/assets/quizwhiz.png')",
-              backgroundRepeat: "no-repeat",
-            }}
-            className="bg-contain bg-center w-full h-full rounded-lg"
-          ></div>
-          <p className="text-white text-sm text-center -mt-3 shadow">
-            QuizWhiz
-          </p>
-        </div>
-      </a>
-
-      {/* public/assets/business-card.png */}
-      <a href="https://heartfelt-pasca-64edc1.netlify.app/" target="_blank">
-        <div className="w-[150px] md:w-[160px] lg:w-[200px] lg:h-40 h-32 flex-shrink-0 rounded-lg hover:scale-110 transition ease-in-out delay-150 duration-300">
-          <div
-            style={{
-              backgroundImage: "url('/assets/business-card.png')",
-              backgroundRepeat: "no-repeat",
-            }}
-            className="bg-contain bg-center w-full h-full rounded-lg"
-          ></div>
-          <p className="text-white text-sm text-center -mt-3 shadow">
-            Business Card
-          </p>
-        </div>
-      </a>
-
-      <button className="w-[100px] h-[42px] bg-[#100742] rounded-[1rem] text-white text-[.7rem] font-[500] flex-shrink-0 tracking-[0.11rem] text-center padding-[0.4rem] shadow-[#1F1554] shadow-inner hover:scale-110 transition ease-in-out duration-300">
+      <button className="btn btn-sm bg-white/50 rounded-sm text-white text-[.7rem] font-[500] flex-shrink-0 tracking-[0.11rem] text-center padding-[0.4rem] hover:scale-110 transition ease-in-out duration-300">
         more...
       </button>
     </div>

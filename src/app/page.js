@@ -3,46 +3,104 @@ import Languages from "./components/Languages";
 import Skills from "./components/Skills";
 import Socials from "./components/Socials";
 import Projects from "./components/Projects";
+import Stat from "./Stat";
+import DarkLightIcon from "./components/DarkLightIcon";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center lg:p-8 xl:p-0">
+      {/* dark and light mode toggle */}
+      <div className="fixed h-full top-[80%] left-[85%] lg:left-[80%] z-50 ">
+        <div
+          className="tooltip tooltip-left tooltip-primary"
+          data-tip="Toggle Dark/Light Mode"
+        >
+          <DarkLightIcon />
+        </div>
+      </div>
+
       {/* top bar, name and button  */}
-      <div className="z-10 flex w-full items-center justify-between text-sm">
-        <h1 className="text-white text-center text-[18px] md:text-[32px] lg:text-[34px] font-[500] tracking-wide">
+      <div className="z-10 flex w-full items-center justify-between text-sm md:mb-8 lg:mb-10 lg:-mt-8">
+        <h1 className="text-white text-center text-[18px] sm:text-xl md:text-3xl lg:text-4xl  lg:text-[34px] font-[500] tracking-wide">
           Boluwatife Emmanuel
         </h1>
-        <button className="w-[101px] md:w-[150px] md:h-[60px] lg:w-[170px] h-[42px] bg-[#100742] rounded-[1.5rem] text-white text-[1rem] font-[500] tracking-[0.11rem] text-center padding-[0.8rem] shadow-[#1F1554] shadow-inner hover:scale-110 transition ease-in-out duration-300">
+        <button className="btn w-[101px] md:w-[150px] md:h-[60px] lg:w-[170px] h-[42px] bg-white/50 rounded-[1.5rem] text-white text-[1rem] font-[500] tracking-[0.11rem] text-center padding-[0.8rem] hover:scale-110 transition ease-in-out duration-300 border-0">
           Resume
         </button>
       </div>
 
       {/* main info box  */}
-      <div className="w-full">
-        <section className="w-full px-[3rem] md:px-[4rem] lg:px-[5rem] py-[3rem] mt-[3rem] rounded-[1.5rem] bg-[#15141F] relative">
+      <div className="w-full relative">
+        {/* main info box  */}
+        <section className="w-full px-[1.5rem] md:px-[4rem] py-[3rem] mt-[3rem] rounded-[1.5rem] bg-gradient-light dark:bg-gradient-dark relative">
           {/* profile pic circle  */}
-          <div className="w-[100px] md:w-[150px] md:h-[150px] h-[100px] lg:w-[170px] lg:h-[170px] p-3 bg-[#15141F] rounded-full absolute -top-5 left-5 md:-top-10 md:left-10 lg:-top-15">
-            {/* <img src="/assets/profile.png" className="w-full" /> */}
-            <div
+          {/* <div className="w-[100px] md:w-[150px] md:h-[150px] h-[100px] lg:w-[170px] lg:h-[170px] p-3 bg-[#15141F] rounded-full absolute -top-5 left-5 md:-top-10 md:left-10 lg:-top-15"> */}
+          {/* <img src="/assets/profile.png" className="w-full" /> */}
+          {/* <div
               style={{
                 backgroundImage: "url('/assets/boluwatife.png')",
                 backgroundRepeat: "no-repeat",
               }}
               className="bg-cover bg-center w-full h-full rounded-full bg-[#3E3D45]"
-            ></div>
+            ></div> */}
+          <div className="avatar absolute -top-5 left-8 sm:left-12 md:-top-10 md:left-10 lg:left-16 lg:-top-15">
+            <div className=" w-[64px] md:w-[112px] md:h-[140px] h-[80px] lg:w-[120px] lg:h-[150px] rounded-full ring ring-pink dark:ring-pinkDark  ring-offset-base-100 ring-offset-4">
+              <Image
+                width={90}
+                height={90}
+                priority
+                alt="boluwatife emmanuel"
+                src={"/assets/profile2.png"}
+                className="rounded-full w-full"
+              />
+            </div>
           </div>
+          {/* </div> */}
 
           {/* social icons boxes */}
+          {/* design */}
+          <div className="w-full absolute  left-[5%] md:left-[15%] top-[6%] sm:top-[8%]  z-20 animate-pulse">
+            <div
+              className="w-[40px] h-[40px] md:w-[80px] md:h-[50px] xl:w-[100px]"
+              style={{
+                backgroundColor: "transparent",
+                opacity: 0.8,
+                backgroundImage:
+                  "radial-gradient(#78713D 0.8px, transparent 0.5px)",
+                backgroundSize: "10px 10px",
+              }}
+            ></div>
+            <div
+              className="w-[40px] h-[40px] md:w-[80px] md:h-[40px] lg:h-[50px]  xl:w-[100px] -translate-y-2 translate-x-8 xl:translate-x-16"
+              style={{
+                backgroundColor: "transparent",
+                opacity: 0.8,
+                backgroundImage:
+                  "radial-gradient(#F25F29 0.8px, transparent 0.5px)",
+                backgroundSize: "10px 10px",
+              }}
+            ></div>
+          </div>
           <Socials />
 
-          <article className="ml-auto">
-            <h2 className="text-[18px] md:text-[32px] tracking-widest text-white text-right lg:text-center shadow">
+          <div className="w-full flex flex-col items-end sm:items-center md:items-end lg:items-center xl:items-end 2xl:items-center justify-center  lg:mt-4">
+            <h2 className="text-sm sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl tracking-widest text-dark dark:text-white font-medium text-right lg:text-center ">
               Frontend Developer
             </h2>
-          </article>
+            <p
+              className="text-xs sm:text-base md:text-lg bg-gradient-pink text-transparent bg-clip-text my-2 max-w-[220px] sm:max-w-full  tracking-widest text-left lg:text-center"
+              style={{ fontFamily: "Alegreya Sans" }}
+            >
+              Helping brands thrive in the digital world
+            </p>
+          </div>
+
+          <div className="w-full my-10 sm:my-16">
+            <Stat />
+          </div>
 
           {/* about me article  */}
-          <article className="mt-[48px] lg:mt-[90px] flex flex-col gap-5">
+          <article className="mt-[50px] lg:mt-[90px] flex flex-col gap-5">
             {/* section header */}
             <div className="flex gap-3 flex items-center">
               <div className="w-[31px] md:w-[40px] md:h-[40px] h-[31px] bg-[#02000F] rounded-full flex items-center justify-center">
@@ -58,17 +116,8 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className="text-white relative text-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="110"
-                  height="28"
-                  viewBox="0 0 102 28"
-                  fill="none"
-                >
-                  <path d="M7.5 0H102L94 28H0L7.5 0Z" fill="#C7C7C7" />
-                </svg>
-                <h3 className="absolute top-0 left-0 right-0 text-[#03000F] text-[16px] tracking-wide italic font-medium">
+              <div className="w-auto shadow-md shadow-pink dark:shadow-pinkDark p-2 flex items-center justify-center h-[25px] bg-gradient-orange relative text-center -skew-x-12">
+                <h3 className=" text-white text-base md:text-xl lg:text-2xl tracking-wide italic font-medium">
                   ABOUT ME
                 </h3>
               </div>
@@ -76,35 +125,27 @@ export default function Home() {
 
             {/* section body  */}
             <p
-              className="text-[12px] md:text-[13px] tracking-widest font-[400] text-[#c7c7c7] leading-6"
+              className="text-sm sm:text-base  lg:text-lg tracking-wide font-[400] text-dark/75 dark:text-[#c7c7c7] leading-6"
               style={{ fontFamily: "Alegreya Sans" }}
             >
-              Hi, I'm Boluwatife Emmanuel, a passionate and experienced web
-              developer specializing in building high-quality web and mobile
-              applications. With a strong background in various programming
-              languages and over two years of experience in frontend
-              development, I am adept at crafting efficient and reliable web
-              solutions. My expertise stems from a strong foundation in diverse
-              programming languages and an unwavering commitment to adhering to
-              software development principles and best practices.{" "}
+              Hey there! 👋 I'm Boluwatife Emmanuel, an experienced frontend
+              developer, having a deep understanding of software development
+              principles and best practices, I am dedicated to turning ideas
+              into innovative web applications. 🖥️
             </p>
 
             <p
-              className="text-[12px] md:text-[13px] tracking-widest font-[400] text-[#c7c7c7] leading-6"
+              className="text-sm sm:text-base lg:text-lg tracking-wide font-[400] text-dark/75 dark:text-[#c7c7c7] leading-6"
               style={{ fontFamily: "Alegreya Sans" }}
             >
-              I am a fervent advocate for staying abreast of the latest security
-              measures and best practices, constantly seeking out new knowledge
-              to expand my skillset. Beyond the realm of code, I am an avid
-              explorer of emerging technologies and design trends, always eager
-              to share my learning experiences and valuable personal development
-              resources on social media. I am also an avid traveler, always
-              eager to experience new cultures and perspectives.
+              I help companies from all over the world with tailor-made
+              solutions. With each project, I push my work to new horizons,
+              always putting quality first. 💻✨
             </p>
           </article>
 
           {/* languages article  */}
-          <article className="mt-[48px] flex flex-col gap-5">
+          <article className="mt-[50px] flex flex-col gap-5">
             {/* section header */}
             <div className="flex gap-3  items-center">
               <div className="w-[31px] h-[31px]  md:w-[40px] md:h-[40px] bg-[#02000F] rounded-full flex items-center justify-center">
@@ -120,17 +161,8 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className="text-white relative text-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="120"
-                  height="33"
-                  viewBox="0 0 102 28"
-                  fill="none"
-                >
-                  <path d="M7.5 0H102L94 28H0L7.5 0Z" fill="#C7C7C7" />
-                </svg>
-                <h3 className="absolute top-0 bottom-0 left-0 right-0 text-[#03000F] text-[16px] tracking-wide italic font-medium">
+              <div className="w-auto shadow-md shadow-pink dark:shadow-pinkDark p-2 flex items-center justify-center h-[25px] bg-gradient-orange relative text-center -skew-x-12">
+                <h3 className=" text-white text-base md:text-xl lg:text-2xl tracking-wide italic font-medium">
                   LANGUAGES
                 </h3>
               </div>
@@ -157,17 +189,8 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className="text-white relative text-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="110"
-                  height="28"
-                  viewBox="0 0 102 28"
-                  fill="none"
-                >
-                  <path d="M7.5 0H102L94 28H0L7.5 0Z" fill="#C7C7C7" />
-                </svg>
-                <h3 className="absolute top-0 left-0 right-0 text-[#03000F] text-[16px] tracking-wide italic font-medium">
+              <div className="w-auto shadow-md shadow-pink dark:shadow-pinkDarkp-2 flex items-center justify-center h-[25px] bg-gradient-orange relative text-center -skew-x-12">
+                <h3 className=" text-white text-base md:text-xl lg:text-2xl  tracking-wide italic font-medium">
                   SKILLS
                 </h3>
               </div>
@@ -181,12 +204,12 @@ export default function Home() {
 
           {/* projects slidess */}
 
-          <article className="min-w-full h-auto mt-14 p-4 overflow-x-auto -ml-[3rem] -mr-[3rem] ">
+          <article className="min-w-full h-auto mt-14 p-4 overflow-x-auto -ml-[1.5rem] -mr-[1.5rem] ">
             <Projects />
           </article>
 
           {/* contact section */}
-          <article className="mt-14 border-y-2 border-[#A2A2A2] h-[50px] text-white text-[12px] md:text-[16px] flex justify-around lg:p-12">
+          <article className="mt-14 border-y-[1px] border-[#A2A2A2] h-[50px] text-dark dark:text-white/75 text-[12px] md:text-[16px] flex items-center justify-around lg:p-12">
             {/* telephone  */}
             <div className="flex gap-3 justify-between items-center">
               <div>
@@ -197,7 +220,7 @@ export default function Home() {
                   viewBox="0 0 512 512"
                 >
                   <path
-                    fill="#ffffff"
+                    fill="currentColor"
                     d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
                   />
                 </svg>
@@ -206,22 +229,24 @@ export default function Home() {
             </div>
 
             {/* mail  */}
-            <div className="flex gap-3 justify-between items-center">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="14"
-                  width="14"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="#ffffff"
-                    d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-                  />
-                </svg>
+            <a href="mailto:bolexzyy@gmail.com">
+              <div className="flex gap-3 justify-between items-center hover:underline underline-offset-2">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="14"
+                    width="14"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                    />
+                  </svg>
+                </div>
+                <p>bolexzyy@gmail.com</p>
               </div>
-              <p>bolexzyy@gmail.com</p>
-            </div>
+            </a>
           </article>
         </section>
       </div>
